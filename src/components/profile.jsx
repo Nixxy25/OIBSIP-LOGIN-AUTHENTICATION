@@ -1,10 +1,12 @@
 import { auth, db } from "./firebase";
 import { doc, getDoc } from "firebase/firestore";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 
 const Profile = () => {
   const [userProfile, setUserProfile] = useState(null);
+  const navigate = useNavigate();
 
   const fetchUserData = async () => {
     auth.onAuthStateChanged(async(user) => {
@@ -30,7 +32,7 @@ const Profile = () => {
   const handleLogOut = async() => {
     try{
       await auth.signOut();
-      window.location.href = "/login";
+      navigate("/login");
       console.log("user logout successful");
     }catch(error){
       console.log("logout error", error.message)
@@ -41,7 +43,7 @@ const Profile = () => {
     <div className="flex h-screen items-center justify-center">
       {userProfile ? (
         <div className="shadow-2xl rounded-md flex flex-col gap-4 text-lg border border-purple-600 p-10">
-          <div className="flex gap-2 justify-center">
+          <div className="flex gap-2 justify-center pb-6">
             <p className="font-bold">Welcome </p>
             <p className="text-purple-600 uppercase font-bold">{userProfile.firstName}</p>
           </div>

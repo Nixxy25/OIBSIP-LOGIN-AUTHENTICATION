@@ -4,17 +4,19 @@ import { auth } from "./firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { toast } from "react-toastify";
 import loginImage from "../assets/loginpage.png";
+import { useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try{
             await signInWithEmailAndPassword(auth, email, password);
             console.log("User Login Successful");
-            window.location.href = "/profile";
+            navigate("/profile");
             
             toast.success("User Login Successful" , {
                 position:"top-center",
