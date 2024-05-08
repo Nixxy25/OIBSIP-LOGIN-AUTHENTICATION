@@ -3,6 +3,7 @@ import { useState } from "react";
 import { auth } from "./firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { toast } from "react-toastify";
+import loginImage from "../assets/loginpage.png";
 
 const LoginPage = () => {
     const [email, setEmail] = useState("");
@@ -39,7 +40,7 @@ const LoginPage = () => {
         </div>
 
         <div className="flex justify-between max-sm:flex-col gap-4 items-center max-lg:flex-col">
-            <div className="w-full none max-lg:hidden"><img src="/src/assets/loginpage.png" className="w-54"></img></div>
+            <div className="w-full none max-lg:hidden"><img src={loginImage} className="w-54"></img></div>
 
             <div className="flex flex-col w-full gap-6">
                 <div className="max-lg:text-center">
