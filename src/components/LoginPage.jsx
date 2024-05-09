@@ -16,7 +16,7 @@ const LoginPage = () => {
         try{
             await signInWithEmailAndPassword(auth, email, password);
             console.log("User Login Successful");
-            navigate("/profile");
+            navigate("profile");
             
             toast.success("User Login Successful" , {
                 position:"top-center",
@@ -75,7 +75,7 @@ const LoginPage = () => {
                     </div>
                 </div>
 
-                <div><button className="bg-blue-600 rounded-md px-10 rounded-full py-3 text-lg text-white active:bg-blue-800 active:m-1" type="submit">LOGIN</button></div>
+                <div><button className="bg-purple-600 rounded-md px-10 rounded-full py-3 text-lg text-white active:bg-purple-800 active:m-1" type="submit">LOGIN</button></div>
             </div>
         </div>
     </form>

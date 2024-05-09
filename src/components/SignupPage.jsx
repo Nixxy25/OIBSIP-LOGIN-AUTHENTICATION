@@ -110,7 +110,7 @@ const SignupPage = () => {
                             />
                         </div>
 
-                        <div className=""><button type="submit" className="bg-blue-600 rounded-md px-10 rounded-full py-3 text-lg text-white active:bg-blue-800 active:m-1">SIGN UP</button></div>
+                        <div className=""><button type="submit" className="bg-purple-600 rounded-md px-10 rounded-full py-3 text-lg text-white active:bg-purple-800 active:m-1">SIGN UP</button></div>
                     </div>
 
                     
