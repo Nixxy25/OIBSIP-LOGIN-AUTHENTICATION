@@ -17,7 +17,6 @@ const SignupPage = () => {
         try {
             await createUserWithEmailAndPassword(auth, email, password);
             const user = auth.currentUser;
-            console.log(user)
             if(user){
                 await setDoc(doc(db, "Users", user.uid),{
                     email: user.email,
@@ -25,13 +24,12 @@ const SignupPage = () => {
                     lastName: lName,
                 });
             }
-            console.log("user success");
+
             toast.success("User Registered Successfully", {
                 position:"top-center",
             });
             
         }  catch (error){
-            console.log(error.message);
             toast.error(error.message, {
                 position:"bottom-center",
             });

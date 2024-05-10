@@ -10,7 +10,7 @@ const Profile = () => {
 
   const fetchUserData = async () => {
     auth.onAuthStateChanged(async(user) => {
-        console.log(user);
+        
 
 
         const docRef = doc(db, "Users", user.uid);
@@ -18,7 +18,6 @@ const Profile = () => {
 
         if(docSnap.exists()) {
           setUserProfile(docSnap.data());
-          console.log(docSnap.data());
         }else{
           console.log("user login failedd")
         }
